@@ -1,18 +1,13 @@
 $(document).ready( function() {
 	
-	function userInputPrompt() {
-		initialStringInput = prompt("Please type in a number");
-	}
-
-	function userInputParse(userInputPrompt) {
-		userInput = parseInt(initialStringInput);
-	}
+	//User Input Prompt and parsing for Integer
+	var userInput = parseInt(prompt("Please type in a number to count up to, not zero."), 10);
 
 	//Display Numbers Handler
 	$("#number-display").html(numberGenerator);
 
 	function numberGenerator() {
-		for (n = 1; n <= 100; n++) {
+		for (n = 1; n <= userInput; n++) {
 
 			if (n % 3 == 0 && n % 5 == 0) {
 			$("#number-display").append("FizzBuzz" + "<br />");
@@ -25,4 +20,5 @@ $(document).ready( function() {
 			}
 		}
 	}
+
 });
